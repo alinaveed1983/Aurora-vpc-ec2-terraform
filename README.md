@@ -42,5 +42,27 @@ Aurora-EC2_bastion-vpc-terraform/
 ```
 
 
-# Mysql client Installation in Amazon Linux 3 EC2
-<pre> ```bash sudo dnf remove -y mysql80-community-release sudo rm -f /etc/yum.repos.d/mysql*.repo sudo dnf clean all sudo rm -rf /var/cache/dnf sudo dnf install -y https://repo.mysql.com/mysql80-community-release-el9-1.noarch.rpm sudo rpm --import https://repo.mysql.com/RPM-GPG-KEY-mysql-2022 sudo dnf makecache --refresh sudo dnf install -y --nogpgcheck mysql-community-client mysql --version sudo dnf install -y telnet telnet --version telnet aurora-mysql-dev.cluster-c76e6c4c6pmc.us-east-1.rds.amazonaws.com 3306 mysql -h <endpoint> -uadmin -p ``` </pre>
+## MySQL Client Installation in Amazon Linux 2023 EC2
+
+```bash
+sudo dnf remove -y mysql80-community-release
+sudo rm -f /etc/yum.repos.d/mysql*.repo
+sudo dnf clean all
+sudo rm -rf /var/cache/dnf
+
+sudo dnf install -y https://repo.mysql.com/mysql80-community-release-el9-1.noarch.rpm
+
+sudo rpm --import https://repo.mysql.com/RPM-GPG-KEY-mysql-2022
+
+sudo dnf makecache --refresh
+
+sudo dnf install -y --nogpgcheck mysql-community-client
+
+mysql --version
+
+sudo dnf install -y telnet
+telnet --version
+telnet aurora-mysql-dev.cluster-c76e6c4c6pmc.us-east-1.rds.amazonaws.com 3306
+mysql -h <endpoint> -uadmin -p
+
+
